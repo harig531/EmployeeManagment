@@ -1,0 +1,36 @@
+﻿@model HomeEmployeeViewListViewModels
+
+@{
+    ViewBag.Title = "Employee";
+    var filepath = "~/images/" + (Model.employee.ImagePath ?? "unknow.png");
+}
+
+
+    <div class="row justify-content-center m-3">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-header">
+                    <h1>@Model.employee.FirstName</h1>
+                </div>
+
+                <div class="card-body text-center">
+                    <img class="card-img-top imageThub" src="@filepath" asp-append-version="true" />
+
+                    <h4>Employee ID : @Model.employee.PersonslId</h4>
+                    <h4>Email : @Model.employee.Email</h4>
+                    <h4>UserName : @Model.employee.UserName</h4>
+
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Back</a>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@Model.employee.PersonslId" class="btn btn-primary">Edit</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@section Section
+{
+    <script src="~/Js/CScript.js"></script>
+}
