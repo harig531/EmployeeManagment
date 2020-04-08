@@ -108,7 +108,7 @@ namespace EmployeeManagment.Controllers
             HomeEmployeeViewEditModel homeEmployeeViewEditModel = new HomeEmployeeViewEditModel()
             {
                    employee = employee,
-                  Title = "Employee Edit Page",
+                  Title = "Employee Edit / View Page",
             };
 
             return View(homeEmployeeViewEditModel);
